@@ -1,90 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="2" passed="1" failed="1" skipped="0">
+<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-06-26T23:52:55 EDT" name="Default suite" finished-at="2024-06-26T23:53:04 EDT" duration-ms="9518">
+  <suite started-at="2024-06-27T19:34:42 EDT" name="Default suite" finished-at="2024-06-27T19:34:57 EDT" duration-ms="14206">
     <groups>
     </groups>
-    <test started-at="2024-06-26T23:52:55 EDT" name="Default test" finished-at="2024-06-26T23:53:04 EDT" duration-ms="9518">
+    <test started-at="2024-06-27T19:34:42 EDT" name="Default test" finished-at="2024-06-27T19:34:57 EDT" duration-ms="14206">
       <class name="selenium.juiceShop">
-        <test-method is-config="true" signature="browserSetup()[pri:0, instance:selenium.juiceShop@aba625]" started-at="2024-06-26T23:52:55 EDT" name="browserSetup" finished-at="2024-06-26T23:53:00 EDT" duration-ms="5308" status="PASS">
+        <test-method is-config="true" signature="browserSetup()[pri:0, instance:selenium.juiceShop@20b2475a]" started-at="2024-06-27T19:34:43 EDT" name="browserSetup" finished-at="2024-06-27T19:34:47 EDT" duration-ms="4415" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- browserSetup -->
-        <test-method signature="juiceshopLoginTest()[pri:1, instance:selenium.juiceShop@aba625]" started-at="2024-06-26T23:53:00 EDT" name="juiceshopLoginTest" finished-at="2024-06-26T23:53:01 EDT" duration-ms="584" status="PASS">
+        <test-method signature="juiceshopLoginTest()[pri:1, instance:selenium.juiceShop@20b2475a]" started-at="2024-06-27T19:34:47 EDT" name="juiceshopLoginTest" finished-at="2024-06-27T19:34:48 EDT" duration-ms="673" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- juiceshopLoginTest -->
-        <test-method signature="checkProdTest()[pri:2, instance:selenium.juiceShop@aba625]" started-at="2024-06-26T23:53:01 EDT" name="checkProdTest" finished-at="2024-06-26T23:53:04 EDT" duration-ms="3524" status="FAIL">
-          <exception class="org.openqa.selenium.StaleElementReferenceException">
-            <message>
-              <![CDATA[stale element reference: stale element not found in the current frame
-  (Session info: chrome=126.0.6478.63)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
-Build info: version: '4.21.0', revision: '79ed462ef4'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.1'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [ab837e753f1c7e97f61f5df3fabc181d, clickElement {id=f.D4ED57879BC245653CE37FEF987F816C.d.182CC4F237A832CA858AEE9980854176.e.168}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 126.0.6478.63, chrome: {chromedriverVersion: 126.0.6478.126 (d36ace6122e..., userDataDir: C:\Users\mathu\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62731}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:62731/devtoo..., se:cdpVersion: 126.0.6478.63, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on windows (ab837e753f1c7e97f61f5df3fabc181d)] -> xpath: //*[@class='mat-table cdk-table']/mat-row[1]/child::mat-cell[3]/button[2]]
-Session ID: ab837e753f1c7e97f61f5df3fabc181d]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.StaleElementReferenceException: stale element reference: stale element not found in the current frame
-  (Session info: chrome=126.0.6478.63)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
-Build info: version: '4.21.0', revision: '79ed462ef4'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.1'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [ab837e753f1c7e97f61f5df3fabc181d, clickElement {id=f.D4ED57879BC245653CE37FEF987F816C.d.182CC4F237A832CA858AEE9980854176.e.168}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 126.0.6478.63, chrome: {chromedriverVersion: 126.0.6478.126 (d36ace6122e..., userDataDir: C:\Users\mathu\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62731}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:62731/devtoo..., se:cdpVersion: 126.0.6478.63, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on windows (ab837e753f1c7e97f61f5df3fabc181d)] -> xpath: //*[@class='mat-table cdk-table']/mat-row[1]/child::mat-cell[3]/button[2]]
-Session ID: ab837e753f1c7e97f61f5df3fabc181d
-at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
-at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
-at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
-at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
-at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
-at selenium.juiceShop.checkProdTest(juiceShop.java:104)
-at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-at org.testng.TestRunner.privateRun(TestRunner.java:794)
-at org.testng.TestRunner.run(TestRunner.java:596)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-at org.testng.TestNG.runSuites(TestNG.java:1063)
-at org.testng.TestNG.run(TestNG.java:1031)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.StaleElementReferenceException -->
+        <test-method signature="addOrderTest()[pri:2, instance:selenium.juiceShop@20b2475a]" started-at="2024-06-27T19:34:48 EDT" name="addOrderTest" finished-at="2024-06-27T19:34:57 EDT" duration-ms="9003" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- checkProdTest -->
+        </test-method> <!-- addOrderTest -->
       </class> <!-- selenium.juiceShop -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
