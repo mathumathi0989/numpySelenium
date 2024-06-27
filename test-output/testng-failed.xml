@@ -5,7 +5,7 @@
     <classes>
       <class name="selenium.juiceShop">
         <methods>
-          <include name="juiceshopLoginTest"/>
+          <include name="checkProdTest"/>
           <include name="browserSetup"/>
         </methods>
       </class> <!-- selenium.juiceShop -->
