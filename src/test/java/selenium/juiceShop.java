@@ -55,7 +55,7 @@ public class juiceShop {
 		dismissAlert.click();
 		account.click();
 		login.click();
-		email.sendKeys("qwe@gmail.com");
+		email.sendKeys("gfd@gmail.com");
 		pwd.sendKeys("123456");
 		loginBtn.click();
 	}
@@ -175,11 +175,11 @@ public class juiceShop {
 		Assert.assertEquals(thank, "Thank you for your purchase!");
 		String orderMessage = driver.findElement(By.xpath("//*[contains(text(),'Your order has')]")).getText();
 		System.out.println("Order Message is ' " + orderMessage + " '");
-		WebDriverWait wait2 = new WebDriverWait(driver, Duration.ofSeconds(30));
+		WebDriverWait wait2 = new WebDriverWait(driver, Duration.ofSeconds(60));
 		WebElement totalPriceAOEle = wait2.until(
-				ExpectedConditions.visibilityOfElementLocated(By.xpath("//table[@class='price-align']/tr[4]/td")));
-		String totalPriceAO = driver.findElement(By.xpath("//table[@class='price-align']/tr[4]/td")).getText();
-		System.out.println("Total price is " + totalPriceAO);
+		    ExpectedConditions.visibilityOfElementLocated(By.xpath("//table[@class='price-align']/tr[4]/td")));
+		String totalPriceAO = totalPriceAOEle.getText();
+		System.out.println("Total price (getText) is " + totalPriceAO);
 
 		// Verify in Account, order history -> print order, track order
 		driver.findElement(By.xpath("//span[normalize-space()='Account']")).click();
@@ -227,7 +227,7 @@ public class juiceShop {
 	}
 
 	
-	@AfterTest
+
 	public void tearDown() {
 		driver.quit();
 	}
