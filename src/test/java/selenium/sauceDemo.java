@@ -13,6 +13,8 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
+import Utilities.loggerLoad;
+
 public class sauceDemo {
 
 	public WebDriver driver;
@@ -61,6 +63,7 @@ public class sauceDemo {
 				"C:\\Users\\mathu\\eclipse-workspace\\NumpyNinja\\Numpy_Selenium\\src\\test\\resources\\drivers\\chromedriver.exe");
 		driver.get(url);
 		driver.manage().window().maximize();
+		loggerLoad.info("browser Opened");
 		PageFactory.initElements(driver, this);
 	}
 
@@ -70,6 +73,7 @@ public class sauceDemo {
 		pwd.sendKeys("secret_sauce");
 		loginBtn.click();
 		Assert.assertEquals(driver.getTitle(), "Swag Labs");
+		loggerLoad.info("Logged successfully");
 	}
 
 	@Test
@@ -100,6 +104,7 @@ public class sauceDemo {
 		String orderMessage = thankMessage.getText();
 		System.out.println(driver.findElement(By.xpath("//div[@class='complete-text']")).getText());
 		Assert.assertEquals(orderMessage, "Thank you for your order!");
+		loggerLoad.info("Placed order successfully");
 		bkHome.click();
 		Assert.assertEquals(driver.getTitle(), "Swag Labs");
 	}
@@ -107,6 +112,7 @@ public class sauceDemo {
 	@AfterTest
 	public void tearDown() {
 		driver.close();
+		loggerLoad.info("browser Closed");
 	}
 
 }

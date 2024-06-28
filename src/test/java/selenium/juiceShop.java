@@ -15,9 +15,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 public class juiceShop {
@@ -40,7 +39,7 @@ public class juiceShop {
 	@FindBy(xpath = "//button[@aria-label='Next page']")
 	WebElement next;
 
-	@BeforeTest
+	@BeforeClass
 	public void browserSetup() {
 		driver = new ChromeDriver();
 		System.setProperty("webdriver.chrome.driver",
@@ -55,7 +54,7 @@ public class juiceShop {
 		dismissAlert.click();
 		account.click();
 		login.click();
-		email.sendKeys("gfd@gmail.com");
+		email.sendKeys("hgv@gmail.com");
 		pwd.sendKeys("123456");
 		loginBtn.click();
 	}
@@ -227,7 +226,7 @@ public class juiceShop {
 	}
 
 	
-
+@AfterClass
 	public void tearDown() {
 		driver.quit();
 	}
