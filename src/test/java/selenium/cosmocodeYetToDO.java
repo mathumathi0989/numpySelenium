@@ -8,7 +8,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class cosmocode {
+public class cosmocodeYetToDO {
 
 	public WebDriver driver;
 	public String url = "https://cosmocode.io/automation-practice/";
