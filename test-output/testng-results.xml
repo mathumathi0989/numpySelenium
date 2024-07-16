@@ -2,16 +2,16 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-07-16T14:20:37 EDT" name="Default suite" finished-at="2024-07-16T14:22:01 EDT" duration-ms="84094">
+  <suite started-at="2024-07-16T18:46:01 EDT" name="Default suite" finished-at="2024-07-16T18:47:32 EDT" duration-ms="91051">
     <groups>
     </groups>
-    <test started-at="2024-07-16T14:20:37 EDT" name="Default test" finished-at="2024-07-16T14:22:01 EDT" duration-ms="84094">
+    <test started-at="2024-07-16T18:46:01 EDT" name="Default test" finished-at="2024-07-16T18:47:32 EDT" duration-ms="91051">
       <class name="selenium.orangeHRM">
-        <test-method is-config="true" signature="browserSetup()[pri:0, instance:selenium.orangeHRM@6f10d5b6]" started-at="2024-07-16T14:20:37 EDT" name="browserSetup" finished-at="2024-07-16T14:20:46 EDT" duration-ms="8778" status="PASS">
+        <test-method is-config="true" signature="browserSetup()[pri:0, instance:selenium.orangeHRM@6f10d5b6]" started-at="2024-07-16T18:46:01 EDT" name="browserSetup" finished-at="2024-07-16T18:46:06 EDT" duration-ms="5068" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- browserSetup -->
-        <test-method signature="orangeHRMTest()[pri:0, instance:selenium.orangeHRM@6f10d5b6]" started-at="2024-07-16T14:20:46 EDT" name="orangeHRMTest" finished-at="2024-07-16T14:22:01 EDT" duration-ms="75233" status="PASS">
+        <test-method signature="orangeHRMTest()[pri:0, instance:selenium.orangeHRM@6f10d5b6]" started-at="2024-07-16T18:46:06 EDT" name="orangeHRMTest" finished-at="2024-07-16T18:47:32 EDT" duration-ms="85903" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- orangeHRMTest -->

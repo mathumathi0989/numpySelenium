@@ -53,22 +53,12 @@ public class screenShot {
 		String TCName = "TC_001";
 		String dir = System.getProperty("user.dir");
 		String time = new SimpleDateFormat("yyyy-MM-dd_HH-mm-ss").format(new Date());
-		// Timestamp time = new Timestamp(System.currentTimeMillis());
-		// System.out.println(time);
 		String path = dir + "\\src\\test\\resources\\screenshots\\" + TCName + "\\screenshot_" + stepName + "_" + time
 				+ ".png";
 
-		// System.out.println("Saving screenshot to: " + path);
-		// System.out.println(path);
-		
 		File destFile = new File(path);
 		FileUtils.copyFile(srcFile, destFile);
-		
-		/*
-		 * if (destFile.exists()) { System.out.println("Screenshot saved successfully: "
-		 * + destFile.getAbsolutePath()); } else {
-		 * System.out.println("Failed to save screenshot."); }
-		 */
+	
 		driver.quit();
 	}
 	public static void main(String[] args) throws Exception {

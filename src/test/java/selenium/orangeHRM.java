@@ -18,12 +18,6 @@ import org.testng.annotations.Test;
 
 public class orangeHRM {
 
-	/*
-Navigate to leave menu and apply personal leave, Logout from the application 
-Login with the Admin user again and navigate to Leave menu 
-Approve the above applied leave under leave list and logout   
-	 */
-	
 	public WebDriver driver;
 	public String url = "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login";
 	public String uName = "Admin";
@@ -35,118 +29,127 @@ Approve the above applied leave under leave list and logout
 	public String zipV = "12345";
 	public String e_nameV = "mathu";
 	public String d_nameV = "mathi";
-	public String r_fName = "mathumathi";
+	public String r_fName = "mathumathie";
 	public String r_lName = "balak";
 	public String created_uName = r_fName;
 	public String created_pwd = "a1234567";
-	
+
 	@FindBy(xpath = "//input[@placeholder='Username']")
 	WebElement username;
 	@FindBy(xpath = "//input[@placeholder='Password']")
 	WebElement password;
 	@FindBy(xpath = "//button[@type='submit']")
 	WebElement loginSaveBtn;
-	@FindBy (xpath="//a[@href='/web/index.php/pim/viewMyDetails']")
+	@FindBy(xpath = "//a[@href='/web/index.php/pim/viewMyDetails']")
 	WebElement myInfo;
 	@FindBy(xpath = "//*[@href=\"/web/index.php/pim/contactDetails/empNumber/7\"]")
 	WebElement contact;
-	//contact fields
-	@FindBy(xpath="//*[normalize-space()='Street 1']/parent::div/following-sibling::div/input")
+	// contact fields
+	@FindBy(xpath = "//*[normalize-space()='Street 1']/parent::div/following-sibling::div/input")
 	WebElement stree1;
-	@FindBy(xpath="//*[normalize-space()='City']/parent::div/following-sibling::div/input")
+	@FindBy(xpath = "//*[normalize-space()='City']/parent::div/following-sibling::div/input")
 	WebElement city;
-	@FindBy(xpath="//*[normalize-space()='State/Province']/parent::div/following-sibling::div/input")
+	@FindBy(xpath = "//*[normalize-space()='State/Province']/parent::div/following-sibling::div/input")
 	WebElement state;
-	@FindBy(xpath="//*[normalize-space()='Zip/Postal Code']/parent::div/following-sibling::div/input")
+	@FindBy(xpath = "//*[normalize-space()='Zip/Postal Code']/parent::div/following-sibling::div/input")
 	WebElement zip;
-	@FindBy(xpath="//*[normalize-space()='Country']/parent::div/following-sibling::div/div/div/div[contains(text(),'-- Select --')]")
+	@FindBy(xpath = "//*[normalize-space()='Country']/parent::div/following-sibling::div/div/div/div[contains(text(),'-- Select --')]")
 	WebElement country;
-	@FindBy(xpath="//*[normalize-space()='Mobile']/parent::div/following-sibling::div/input")
+	@FindBy(xpath = "//*[normalize-space()='Mobile']/parent::div/following-sibling::div/input")
 	WebElement mobile;
-	//emergency fields
+	// emergency fields
 	@FindBy(xpath = "//*[@href=\"/web/index.php/pim/viewEmergencyContacts/empNumber/7\"]")
 	WebElement emergency;
-	@FindBy(xpath="//body/div[@id='app']/div/div/div[@class='oxd-layout-context']/div/div/div/div/div/div/button[1]")
+	@FindBy(xpath = "//body/div[@id='app']/div/div/div[@class='oxd-layout-context']/div/div/div/div/div/div/button[1]")
 	WebElement add;
 	@FindBy(xpath = "//*[normalize-space()='Name']/parent::div/following-sibling::div/input")
 	WebElement e_name;
-	@FindBy(xpath="//*[normalize-space()='Relationship']/parent::div/following-sibling::div/input")
+	@FindBy(xpath = "//*[normalize-space()='Relationship']/parent::div/following-sibling::div/input")
 	WebElement e_relation;
-	@FindBy(xpath="//*[normalize-space()='Mobile']/parent::div/following-sibling::div/input")
+	@FindBy(xpath = "//*[normalize-space()='Mobile']/parent::div/following-sibling::div/input")
 	WebElement e_mobile;
-	//dependant fields
+	// dependant fields
 	@FindBy(xpath = "//*[@href=\"/web/index.php/pim/viewDependents/empNumber/7\"]")
 	WebElement dependents;
-	//recruitment
-	@FindBy(xpath="//span[normalize-space()='Recruitment']")
+	// recruitment
+	@FindBy(xpath = "//span[normalize-space()='Recruitment']")
 	WebElement recruit;
-	@FindBy(xpath="//button[normalize-space()='Add']")
+	@FindBy(xpath = "//button[normalize-space()='Add']")
 	WebElement add_candidate;
-	//candidate fields
-	@FindBy(xpath="//*[@name='firstName']")
+	// candidate fields
+	@FindBy(xpath = "//*[@name='firstName']")
 	WebElement fName;
-	@FindBy(xpath="//*[@name='lastName']")
+	@FindBy(xpath = "//*[@name='lastName']")
 	WebElement lName;
-	@FindBy(xpath="//*[normalize-space()='Vacancy']/parent::div/following-sibling::div/div/div/div[normalize-space()='-- Select --']")
+	@FindBy(xpath = "//*[normalize-space()='Vacancy']/parent::div/following-sibling::div/div/div/div[normalize-space()='-- Select --']")
 	WebElement c_vacancy;
-	@FindBy(xpath="//*[contains(text(),'Email')]/parent::div/following-sibling::div/input")
+	@FindBy(xpath = "//*[contains(text(),'Email')]/parent::div/following-sibling::div/input")
 	WebElement email;
-	//shortlist
-	@FindBy(xpath="//button[normalize-space()='Shortlist']")
+	// shortlist
+	@FindBy(xpath = "//button[normalize-space()='Shortlist']")
 	WebElement shortlist;
-	@FindBy(xpath="//*[normalize-space()='Notes']/parent::div/following-sibling::div/textarea")
+	@FindBy(xpath = "//*[normalize-space()='Notes']/parent::div/following-sibling::div/textarea")
 	WebElement s_notes;
-	@FindBy(xpath="//*[@class='orangehrm-recruitment-status']/p")
+	@FindBy(xpath = "//*[@class='orangehrm-recruitment-status']/p")
 	WebElement short_status;
-	//interviewSchedule
-	@FindBy(xpath="//button[normalize-space()='Schedule Interview']")
+	// interviewSchedule
+	@FindBy(xpath = "//button[normalize-space()='Schedule Interview']")
 	WebElement schedule;
-	@FindBy(xpath="//*[normalize-space()='Interview Title']/parent::div/following-sibling::div/input")
-	WebElement interviewTitle; 
-	@FindBy(xpath="//*[normalize-space()='Interviewer']/parent::div/following-sibling::div/div/div/input")
+	@FindBy(xpath = "//*[normalize-space()='Interview Title']/parent::div/following-sibling::div/input")
+	WebElement interviewTitle;
+	@FindBy(xpath = "//*[normalize-space()='Interviewer']/parent::div/following-sibling::div/div/div/input")
 	WebElement interviewer;
-	@FindBy(xpath="//input[@placeholder='yyyy-dd-mm'] ")
+	@FindBy(xpath = "//input[@placeholder='yyyy-dd-mm'] ")
 	WebElement date;
-	//passed interview
-	@FindBy(xpath="//button[normalize-space()='Mark Interview Passed']")
+	// passed interview
+	@FindBy(xpath = "//button[normalize-space()='Mark Interview Passed']")
 	WebElement markPassed;
-	@FindBy(xpath="//button[normalize-space()='Offer Job']")
+	@FindBy(xpath = "//button[normalize-space()='Offer Job']")
 	WebElement offerJob;
-	@FindBy(xpath="//button[normalize-space()='Hire']")
+	@FindBy(xpath = "//button[normalize-space()='Hire']")
 	WebElement hire;
-	//Admin
-	@FindBy(xpath="//span[normalize-space()='Admin']")
+	// Admin
+	@FindBy(xpath = "//span[normalize-space()='Admin']")
 	WebElement admin;
-	@FindBy(xpath="//*[normalize-space()='User Role']/parent::div/following-sibling::div/div/div/div[normalize-space()='-- Select --']")
+	@FindBy(xpath = "//*[normalize-space()='User Role']/parent::div/following-sibling::div/div/div/div[normalize-space()='-- Select --']")
 	WebElement userRole;
-	@FindBy(xpath="//input[@placeholder='Type for hints...']")
+	@FindBy(xpath = "//input[@placeholder='Type for hints...']")
 	WebElement emp_Name;
-	@FindBy(xpath="//*[normalize-space()='Status']/parent::div/following-sibling::div/div/div/div[normalize-space()='-- Select --']")
+	@FindBy(xpath = "//*[normalize-space()='Status']/parent::div/following-sibling::div/div/div/div[normalize-space()='-- Select --']")
 	WebElement status;
-	@FindBy(xpath="//*[normalize-space()='Username']/parent::div/following-sibling::div/input")
+	@FindBy(xpath = "//*[normalize-space()='Username']/parent::div/following-sibling::div/input")
 	WebElement admin_username;
-	@FindBy(xpath="//*[normalize-space()='Password']/parent::div/following-sibling::div/input")
+	@FindBy(xpath = "//*[normalize-space()='Password']/parent::div/following-sibling::div/input")
 	WebElement admin_password;
-	@FindBy(xpath="//*[normalize-space()='Confirm Password']/parent::div/following-sibling::div/input")
+	@FindBy(xpath = "//*[normalize-space()='Confirm Password']/parent::div/following-sibling::div/input")
 	WebElement admin_confirmPassword;
-	//logout 
-	@FindBy(xpath="//span[@class='oxd-userdropdown-tab']")
+	// logout
+	@FindBy(xpath = "//span[@class='oxd-userdropdown-tab']")
 	WebElement user;
-	@FindBy(xpath="//a[@href=\"/web/index.php/auth/logout\"]")
+	@FindBy(xpath = "//a[@href=\"/web/index.php/auth/logout\"]")
 	WebElement logout;
-	
-	
-	
+	// leave
+	@FindBy(xpath = "//a[@href=\"/web/index.php/leave/viewLeaveModule\"]")
+	WebElement leave;
+	@FindBy(xpath = "//a[normalize-space()='Apply']")
+	WebElement apply;
+	@FindBy(xpath = "//*[normalize-space()='Leave Type']/parent::div/following-sibling::div/div/div/div[contains(text(),'-- Select --')]")
+	WebElement leaveType;
+	@FindBy(xpath = "//*[normalize-space()='From Date']/parent::div/following-sibling::div/div/div/input")
+	WebElement fromDate;
+	@FindBy(xpath = "//*[normalize-space()='To Date']/parent::div/following-sibling::div/div/div/input")
+	WebElement toDate;
+
 //	@FindBy(xpath="//p[@class='oxd-text oxd-text--p oxd-text--toast-message oxd-toast-content-text']")
-	//WebElement toastMessage;
-	
+	// WebElement toastMessage;
+
 	@BeforeTest
 	public void browserSetup() throws Exception {
 		driver = new ChromeDriver();
 //Launch the application 
 		driver.get(url);
 		driver.manage().window().maximize();
-	Thread.sleep(1000);
+		Thread.sleep(1000);
 	}
 
 	@Test
@@ -156,21 +159,24 @@ Approve the above applied leave under leave list and logout
 		password.sendKeys(pwd);
 		loginSaveBtn.click();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-	/*
+
 //Navigate to My info - > Contact Details, enter contact details and press save button 
 		myInfo.click();
 		contact.click();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		stree1.click();
+		stree1.clear();
 		stree1.sendKeys(street);
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		city.click();
+		city.clear();
 		city.sendKeys(cityV);
 		state.click();
+		state.clear();
 		state.sendKeys(stateV);
 		zip.click();
+		zip.clear();
 		zip.sendKeys(zipV);
-		country.click();
 		mobile.sendKeys(num);
 		loginSaveBtn.click();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
@@ -186,7 +192,7 @@ Approve the above applied leave under leave list and logout
 		e_mobile.sendKeys("2354523545");
 		loginSaveBtn.click();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-		String e_verify = driver.findElement(By.xpath("//div[contains(text(),'"+e_nameV+"')]")).getText();
+		String e_verify = driver.findElement(By.xpath("//div[contains(text(),'" + e_nameV + "')]")).getText();
 		Assert.assertEquals(e_verify, e_nameV);
 //Navigate to Dependents and add dependents 
 		dependents.click();
@@ -199,9 +205,8 @@ Approve the above applied leave under leave list and logout
 		driver.findElement(By.xpath("//div//*[contains(text(),'Child')]")).click();
 		loginSaveBtn.click();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-		String d_verify = driver.findElement(By.xpath("//div[contains(text(),'"+d_nameV+"')]")).getText();
+		String d_verify = driver.findElement(By.xpath("//div[contains(text(),'" + d_nameV + "')]")).getText();
 		Assert.assertEquals(d_verify, d_nameV);
-		*/
 //Navigate to recruitment menu and add a candidate 
 		recruit.click();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
@@ -210,30 +215,27 @@ Approve the above applied leave under leave list and logout
 		fName.sendKeys(r_fName);
 		lName.sendKeys(r_lName);
 		c_vacancy.click();
-		driver.findElement(By.xpath("//*[contains(text(),'PayRoll')]")).click();
+		driver.findElement(By.xpath("//*[contains(text(),'Payroll Administrator')]")).click();
 		email.sendKeys("mathu@gmail.com");
 		loginSaveBtn.click();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
-		String r_verify = driver.findElement(By.xpath("//*[normalize-space()='Name']/parent::div/following-sibling::div/p[@class='oxd-text oxd-text--p']")).getText();
-		String r_name = r_fName+" "+r_lName;
+		String r_verify = driver.findElement(By.xpath(
+				"//*[normalize-space()='Name']/parent::div/following-sibling::div/p[@class='oxd-text oxd-text--p']"))
+				.getText();
+		String r_name = r_fName + " " + r_lName;
 		Assert.assertEquals(r_verify, r_name);
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 //Shortlist the candidate and schedule the interview 
 		WebDriverWait wait1 = new WebDriverWait(driver, Duration.ofSeconds(10));
-	    wait1.until(ExpectedConditions.visibilityOf(shortlist));
+		wait1.until(ExpectedConditions.visibilityOf(shortlist));
 		shortlist.click();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 		s_notes.sendKeys("shortlisted candidate");
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
 		loginSaveBtn.click();
-		 WebDriverWait wait2 = new WebDriverWait(driver, Duration.ofSeconds(10));
-		 wait2.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("//p[@class='oxd-text oxd-text--p oxd-text--toast-message oxd-toast-content-text']")));
-	//	 boolean isErrorDisplayed = wait2.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("//p[@class='oxd-text oxd-text--p oxd-text--toast-message oxd-toast-content-text']")));
-	     //   if (!isErrorDisplayed) {
-	      //      System.out.println("Error occurred while saving.");
-	     //   } else {
-	     //       System.out.println("Saved successfully.");
-	    //    }
+		WebDriverWait wait2 = new WebDriverWait(driver, Duration.ofSeconds(10));
+		wait2.until(ExpectedConditions.invisibilityOfElementLocated(
+				By.xpath("//p[@class='oxd-text oxd-text--p oxd-text--toast-message oxd-toast-content-text']")));
 		String shortlist_message = short_status.getText();
 		System.out.println(shortlist_message);
 		Assert.assertEquals(shortlist_message, "Status: Shortlisted");
@@ -242,7 +244,9 @@ Approve the above applied leave under leave list and logout
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 		interviewTitle.sendKeys("QA");
 		interviewer.sendKeys("Peter Mac Anderson");
-		driver.findElement(By.xpath("//*[normalize-space()='Interviewer']/parent::div/following-sibling::div/div/div/div/span")).click();
+		driver.findElement(
+				By.xpath("//*[normalize-space()='Interviewer']/parent::div/following-sibling::div/div/div/div/span"))
+				.click();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		date.sendKeys("2024-26-07");
 		loginSaveBtn.click();
@@ -276,29 +280,61 @@ Approve the above applied leave under leave list and logout
 		String hired_message = short_status.getText();
 		System.out.println(hired_message);
 		Assert.assertEquals(hired_message, "Status: Hired");
-		//candidate history table
+//candidate history table -- yet to do
+
 //Navigate back to the Recruitment tab and search for the above candidate and verify the status 
-	
+		recruit.click();
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		driver.findElement(By.xpath(
+				"//*[normalize-space()='Vacancy']/parent::div/following-sibling::div/div/div/div[normalize-space()='-- Select --']"))
+				.click();
+		driver.findElement(By.xpath(
+				"//*[normalize-space()='Vacancy']/parent::div/following-sibling::div/div/div/div[normalize-space()='Payroll Administrator']"))
+				.click();
+		driver.findElement(By.xpath(
+				"//*[normalize-space()='Candidate Name']/parent::div/following-sibling::div//input[@placeholder='Type for hints...']"))
+				.sendKeys(r_fName);
+		driver.findElement(
+				By.xpath("//*[normalize-space()='Candidate Name']/parent::div/following-sibling::div/div/div/div/span"))
+				.click();
+		driver.findElement(By.xpath(
+				"//*[normalize-space()='Status']/parent::div/following-sibling::div/div/div/div[normalize-space()='-- Select --']"))
+				.click();
+		driver.findElement(By.xpath(
+				"//*[normalize-space()='Status']/parent::div/following-sibling::div/div/div/div[normalize-space()='Hired']"))
+				.click();
+		driver.findElement(By.xpath("//button[normalize-space()='Search']")).click();
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		String statusVerify = driver
+				.findElement(By.xpath("//*[@class='oxd-table']/div[@class='oxd-table-body']/div/div/div[6]")).getText();
+		System.out.println(statusVerify);
+		Assert.assertEquals(statusVerify, "Hired");
 //Navigate to the Admin tab and create a user with ESS role for the above employee 
 		admin.click();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 		add_candidate.click();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 		userRole.click();
-		driver.findElement(By.xpath("//*[normalize-space()='User Role']/parent::div/following-sibling::div/div/div/div[normalize-space()='ESS']")).click();
+		driver.findElement(By.xpath(
+				"//*[normalize-space()='User Role']/parent::div/following-sibling::div/div/div/div[normalize-space()='ESS']"))
+				.click();
 		emp_Name.sendKeys(r_fName);
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));		
-		driver.findElement(By.xpath("//*[normalize-space()='Employee Name']/parent::div/following-sibling::div/div/div/div/span")).click();
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		driver.findElement(
+				By.xpath("//*[normalize-space()='Employee Name']/parent::div/following-sibling::div/div/div/div/span"))
+				.click();
 		status.click();
-		driver.findElement(By.xpath("//*[normalize-space()='Status']/parent::div/following-sibling::div/div/div/div[normalize-space()='Enabled']")).click();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));	
+		driver.findElement(By.xpath(
+				"//*[normalize-space()='Status']/parent::div/following-sibling::div/div/div/div[normalize-space()='Enabled']"))
+				.click();
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 		admin_username.sendKeys(created_uName);
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 		admin_password.sendKeys(created_pwd);
 		admin_confirmPassword.sendKeys(created_pwd);
 		loginSaveBtn.click();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
-		driver.findElement(By.xpath("//h5[@class='oxd-text oxd-text--h5 oxd-table-filter-title']"));	//just to verify
+		driver.findElement(By.xpath("//h5[@class='oxd-text oxd-text--h5 oxd-table-filter-title']")); // just to verify
 //Logout from the application and login with the above created username & password 
 		user.click();
 		logout.click();
@@ -309,11 +345,17 @@ Approve the above applied leave under leave list and logout
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		String createdName_verify = driver.findElement(By.xpath("//*[@class='oxd-userdropdown-name']")).getText();
 		Assert.assertEquals(createdName_verify, r_name);
-		
-		
+		/*
+		 * //Navigate to leave menu and apply personal leave, Logout from the
+		 * application leave.click();
+		 * driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+		 * apply.click(); leaveType.click(); driver.findElement(By.
+		 * xpath("//*[normalize-space()='Leave Type']/parent::div/following-sibling::div/div/div/following::span"
+		 * )).click(); fromDate.sendKeys("2024-23-07"); toDate.sendKeys("2024-31-07");
+		 */
+//Login with the Admin user again and navigate to Leave menu 
+//Approve the above applied leave under leave list and logout   		
+
 	}
-	
-	
-	
-	
+
 }
