@@ -5,8 +5,8 @@
     <classes>
       <class name="selenium.orangeHRM">
         <methods>
-          <include name="orangeHRMTest"/>
           <include name="browserSetup"/>
+          <include name="logoutTest"/>
         </methods>
       </class> <!-- selenium.orangeHRM -->
     </classes>

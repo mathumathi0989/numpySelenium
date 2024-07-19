@@ -1,20 +1,68 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="12" passed="12" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-07-18T15:20:04 EDT" name="Default suite" finished-at="2024-07-18T15:21:32 EDT" duration-ms="87360">
+  <suite started-at="2024-07-18T20:25:31 EDT" name="Default suite" finished-at="2024-07-18T20:26:51 EDT" duration-ms="79397">
     <groups>
     </groups>
-    <test started-at="2024-07-18T15:20:04 EDT" name="Default test" finished-at="2024-07-18T15:21:32 EDT" duration-ms="87360">
+    <test started-at="2024-07-18T20:25:31 EDT" name="Default test" finished-at="2024-07-18T20:26:51 EDT" duration-ms="79397">
       <class name="selenium.orangeHRM">
-        <test-method is-config="true" signature="browserSetup()[pri:0, instance:selenium.orangeHRM@6f10d5b6]" started-at="2024-07-18T15:20:04 EDT" name="browserSetup" finished-at="2024-07-18T15:20:15 EDT" duration-ms="10945" status="PASS">
+        <test-method is-config="true" signature="browserSetup()[pri:0, instance:selenium.orangeHRM@312aa7c]" started-at="2024-07-18T20:25:31 EDT" name="browserSetup" finished-at="2024-07-18T20:25:36 EDT" duration-ms="4757" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- browserSetup -->
-        <test-method signature="orangeHRMTest()[pri:0, instance:selenium.orangeHRM@6f10d5b6]" started-at="2024-07-18T15:20:15 EDT" name="orangeHRMTest" finished-at="2024-07-18T15:21:32 EDT" duration-ms="76337" status="PASS">
+        <test-method signature="contactTest()[pri:1, instance:selenium.orangeHRM@312aa7c]" started-at="2024-07-18T20:25:36 EDT" name="contactTest" finished-at="2024-07-18T20:25:41 EDT" duration-ms="4719" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- orangeHRMTest -->
+        </test-method> <!-- contactTest -->
+        <test-method signature="emergenceTest()[pri:2, instance:selenium.orangeHRM@312aa7c]" started-at="2024-07-18T20:25:41 EDT" name="emergenceTest" finished-at="2024-07-18T20:25:42 EDT" duration-ms="1335" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- emergenceTest -->
+        <test-method signature="dependentsTest()[pri:3, instance:selenium.orangeHRM@312aa7c]" started-at="2024-07-18T20:25:42 EDT" name="dependentsTest" finished-at="2024-07-18T20:25:43 EDT" duration-ms="1005" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- dependentsTest -->
+        <test-method signature="candidateTest()[pri:4, instance:selenium.orangeHRM@312aa7c]" started-at="2024-07-18T20:25:43 EDT" name="candidateTest" finished-at="2024-07-18T20:25:49 EDT" duration-ms="6384" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- candidateTest -->
+        <test-method signature="shortlistCandTest()[pri:5, instance:selenium.orangeHRM@312aa7c]" started-at="2024-07-18T20:25:49 EDT" name="shortlistCandTest" finished-at="2024-07-18T20:26:01 EDT" depends-on-methods="selenium.orangeHRM.candidateTest" duration-ms="11367" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- shortlistCandTest -->
+        <test-method signature="interviewTest()[pri:6, instance:selenium.orangeHRM@312aa7c]" started-at="2024-07-18T20:26:01 EDT" name="interviewTest" finished-at="2024-07-18T20:26:12 EDT" depends-on-methods="selenium.orangeHRM.shortlistCandTest" duration-ms="10862" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- interviewTest -->
+        <test-method signature="candHistoryTest()[pri:7, instance:selenium.orangeHRM@312aa7c]" started-at="2024-07-18T20:26:12 EDT" name="candHistoryTest" finished-at="2024-07-18T20:26:17 EDT" depends-on-methods="selenium.orangeHRM.interviewTest" duration-ms="5788" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- candHistoryTest -->
+        <test-method signature="recruitTest()[pri:8, instance:selenium.orangeHRM@312aa7c]" started-at="2024-07-18T20:26:17 EDT" name="recruitTest" finished-at="2024-07-18T20:26:21 EDT" depends-on-methods="selenium.orangeHRM.candHistoryTest" duration-ms="3242" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- recruitTest -->
+        <test-method signature="essRoleTest()[pri:9, instance:selenium.orangeHRM@312aa7c]" started-at="2024-07-18T20:26:21 EDT" name="essRoleTest" finished-at="2024-07-18T20:26:28 EDT" depends-on-methods="selenium.orangeHRM.recruitTest" duration-ms="7538" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- essRoleTest -->
+        <test-method signature="entitlementTest()[pri:10, instance:selenium.orangeHRM@312aa7c]" started-at="2024-07-18T20:26:28 EDT" name="entitlementTest" finished-at="2024-07-18T20:26:32 EDT" depends-on-methods="selenium.orangeHRM.essRoleTest" duration-ms="4004" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- entitlementTest -->
+        <test-method signature="leaveTest()[pri:11, instance:selenium.orangeHRM@312aa7c]" started-at="2024-07-18T20:26:32 EDT" name="leaveTest" finished-at="2024-07-18T20:26:41 EDT" depends-on-methods="selenium.orangeHRM.entitlementTest" duration-ms="9000" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- leaveTest -->
+        <test-method signature="adminApproveLeaveTest()[pri:12, instance:selenium.orangeHRM@312aa7c]" started-at="2024-07-18T20:26:41 EDT" name="adminApproveLeaveTest" finished-at="2024-07-18T20:26:50 EDT" depends-on-methods="selenium.orangeHRM.leaveTest" duration-ms="9095" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- adminApproveLeaveTest -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:selenium.orangeHRM@312aa7c]" started-at="2024-07-18T20:26:50 EDT" name="tearDown" finished-at="2024-07-18T20:26:51 EDT" duration-ms="152" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
       </class> <!-- selenium.orangeHRM -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
