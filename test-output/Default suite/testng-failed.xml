@@ -3,12 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="selenium.orangeHRM">
+      <class name="selenium.dsalgoTest">
         <methods>
-          <include name="browserSetup"/>
-          <include name="logoutTest"/>
+          <include name="testDSALGO"/>
+          <include name="tearDown"/>
+          <include name="setUp"/>
         </methods>
-      </class> <!-- selenium.orangeHRM -->
+      </class> <!-- selenium.dsalgoTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

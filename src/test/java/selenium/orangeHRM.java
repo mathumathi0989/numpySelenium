@@ -21,7 +21,7 @@ public class orangeHRM {
 
 	public WebDriver driver;
 	public String url = "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login";
-	public String r_fName = "dmathumathi"; // change the name on each run
+	public String r_fName = "dheenam"; // change the name on each run
 	public String r_lName = "balak";
 	public String uName = "Admin";
 	public String pwd = "admin123";
