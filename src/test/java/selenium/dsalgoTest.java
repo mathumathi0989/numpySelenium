@@ -22,9 +22,9 @@ public class dsalgoTest {
     
     @BeforeTest
     public void setUp() {
-    //    System.setProperty("webdriver.chrome.driver", "path/to/chromedriver");
         driver = new ChromeDriver();
         driver.get(url);
+        driver.manage().window().maximize();
         DsalgoPage = new dsalgoPage(driver);
     }
 
@@ -45,12 +45,7 @@ public class dsalgoTest {
     	DsalgoPage.getAlertMessage();
     	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
     	*/
-    	/*
-    	//Signout
-    	DsalgoPage.clickSignOut();
-    	DsalgoPage.getAlertMessage();
-    	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
-    	*/
+    
     	//Signin
     	DsalgoPage.clickSignIn();
     	DsalgoPage.enterUserName("mathu");
@@ -59,54 +54,15 @@ public class dsalgoTest {
     	alertMessage = DsalgoPage.getAlertMessage();
     	Assert.assertEquals(alertMessage, "You are logged in");
     	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
-    	//DataStructures -Intro
-    	System.out.println("---------------------DataStructures Introduction-------------------------------------------");
-    	DsalgoPage.clickDataStrucIntro();
-    	DsalgoPage.topicsCovered();
-    	System.out.println("---------------------------------------------------------------------------");
-    	//Array
-    	System.out.println("-----------------------Array-----------------------------------------");
-    	DsalgoPage.clickNumpyNinja();
-    	DsalgoPage.clickGetStarted();
-    	DsalgoPage.clickArray();
-    	DsalgoPage.topicsCovered();
-    	System.out.println("---------------------------------------------------------------------------");
-    	//LinkedList
-    	System.out.println("------------------------LinkedList----------------------------------------");
-    	DsalgoPage.clickNumpyNinja();
-    	DsalgoPage.clickGetStarted();
-    	DsalgoPage.clickLinkedList();
-    	DsalgoPage.topicsCovered();
-    	System.out.println("---------------------------------------------------------------------------");
-    	//Stack
-    	System.out.println("--------------------------Stack--------------------------------------");
-    	DsalgoPage.clickNumpyNinja();
-    	DsalgoPage.clickGetStarted();
-    	DsalgoPage.clickStack();
-    	DsalgoPage.topicsCovered();
-    	System.out.println("---------------------------------------------------------------------------");
-    	//Queue
-    	System.out.println("-----------------------------Queue-----------------------------------");
-    	DsalgoPage.clickNumpyNinja();
-    	DsalgoPage.clickGetStarted();
-    	DsalgoPage.clickQueue();
-    	DsalgoPage.topicsCovered();
-    	System.out.println("---------------------------------------------------------------------------");
-    	//Tree
-    	System.out.println("---------------------------Tree-------------------------------------");
-    	DsalgoPage.clickNumpyNinja();
-    	DsalgoPage.clickGetStarted();
-    	DsalgoPage.clickTree();
-    	DsalgoPage.topicsCovered();
-    	System.out.println("---------------------------------------------------------------------------");
-    	//Graph
-    	System.out.println("---------------------------Graph-------------------------------------");
-    	DsalgoPage.clickNumpyNinja();
-    	DsalgoPage.clickGetStarted();
-    	DsalgoPage.clickGraph();
-    	DsalgoPage.topicsCovered();
-    	System.out.println("---------------------------------------------------------------------------");
     	
+    	//DSList - TopicsCovered 
+    	DsalgoPage.dslist();
+    	
+    	//Signout
+    	DsalgoPage.clickSignOut();
+    	DsalgoPage.getAlertMessage();
+    	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+    
     }
 
     @AfterTest
