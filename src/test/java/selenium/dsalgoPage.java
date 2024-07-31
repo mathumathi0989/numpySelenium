@@ -3,6 +3,7 @@ package selenium;
 import java.time.Duration;
 import java.util.List;
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -13,8 +14,13 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class dsalgoPage {
 	
 	 private WebDriver driver;
+	 private WebDriverWait wait;
+	 
+	 
 	  public dsalgoPage(WebDriver driver) {
 	        this.driver = driver;
+	        this.wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+	        
 	    }
 	  
 	 //GetStarted page
@@ -86,12 +92,13 @@ public class dsalgoPage {
 	 
 	 //Data Structures list
 	 public void dslist() {
-		  WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+	//	  WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 		 List<WebElement> links = driver.findElements(By.xpath("//div[@class='row row-cols-1 row-cols-md-3 g-4']/div//a"));
 	        int numLinks = links.size();
 	        for (int i = 0; i < numLinks; i++) {
-	            links = driver.findElements(By.xpath("//div[@class='row row-cols-1 row-cols-md-3 g-4']/div//a"));
-	            WebElement link = links.get(i);
+	        List<WebElement>	currentLinks = driver.findElements(By.xpath("//div[@class='row row-cols-1 row-cols-md-3 g-4']/div//a"));
+	          
+	            WebElement link = currentLinks.get(i);
 	            String url = link.getAttribute("href");
 	            driver.navigate().to(url);
 	            wait.until(ExpectedConditions.presenceOfElementLocated(By.tagName("body")));
@@ -106,25 +113,52 @@ public class dsalgoPage {
 	 //Topics Covered
 	 public void topicsCovered() {
 	        List<WebElement> links1 = driver.findElements(By.xpath("//a[@class='list-group-item']"));
-	        for (WebElement link1 : links1) {
+	        for (int i = 0; i < links1.size(); i++) {
+	        	WebElement link1 = links1.get(i);
 	            String url = link1.getAttribute("href");
 	            System.out.println("Clicking on: " + url);
 	            link1.click();
 	            System.out.println("Title of the Topics Covered: " + driver.getTitle());
 	            clickTryHere();
 	            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+	            editTryHere("");
 	            editTryHere("print\"hello\"");
-	            clickRun();
-	            String codeOutput = driver.findElement(By.xpath("//pre[@id='output']")).getText();
-	            System.out.println("Output : " +codeOutput);
-	            driver.navigate().back();
-	            driver.navigate().back();
+	            editTryHere("invalid code");
+	             driver.navigate().back();
+	             wait.until(ExpectedConditions.presenceOfElementLocated(By.tagName("body")));
+	             /*
+	             System.out.println(links1.size());
+	 				if (i == links1.size() - 1) {
+	 					((JavascriptExecutor) driver).executeScript("window.scrollTo(0, 0);");
+
+	 					
+	 					By practiceLinkLocator = By.xpath("//a[@class='list-group-item list-group-item-light text-info']");
+	 				try {
+						WebElement practiceLink = driver.findElement(practiceLinkLocator);
+						((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", practiceLink);
+						wait.until(ExpectedConditions.elementToBeClickable(practiceLink));
+						practiceLink.click();
+						wait.until(ExpectedConditions.presenceOfElementLocated(By.tagName("body")));
+						System.out.println("Title of the Practice Questions page: " + driver.getTitle());
+					} catch (Exception e) {
+						System.out.println("Practice questions link not found or not clickable.");
+						  driver.navigate().back();
+						  driver.navigate().back();
+						  }
+						  }
+						  
+						  */
+						  driver.navigate().back();
+		
+	           
 	        }
-	 }
+	        }
+	 
 	 
 	 //Try Here
 	 private By tryhereButton = By.xpath("//a[@class='btn btn-info']");
 	 private By runButton = By.xpath("//button[@type='button']");
+	 private By output = By.xpath("//pre[@id='output']");
 	 public void clickTryHere() {
 		 driver.findElement(tryhereButton).click();
 	 }
@@ -133,6 +167,21 @@ public class dsalgoPage {
 	                        "editor.setValue(arguments[0]);";
 	        JavascriptExecutor js = (JavascriptExecutor) driver;
 	        js.executeScript(script, code);
+	        clickRun();
+	        try {
+	            Alert alert = wait.until(ExpectedConditions.alertIsPresent());
+	            System.out.println("Alert message: " + alert.getText());
+	            alert.accept();
+	        } catch (Exception e) {
+	            try {
+	            	wait.until(ExpectedConditions.visibilityOfElementLocated(output));
+	            	String codeOutput = driver.findElement(output).getText();
+	                System.out.println("Code output: " + codeOutput);
+	            } catch (Exception ex) {
+	                System.out.println("No output element found or no output generated.");
+	            }
+	        }
+
 	 }
 	 public void clickRun() {
 		 driver.findElement(runButton).click();
